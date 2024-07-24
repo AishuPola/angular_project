@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { MoviesComponent } from './movies/movies.component';
+import { MovielistComponent } from './movielist/movielist.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, UserComponent, MoviesComponent],
+  imports: [RouterOutlet, UserComponent, MoviesComponent, MovielistComponent],
   templateUrl: './app.component.html',
   // template: `@for user of users; track user.id{ {{ user.imageurl }},
   //   {{ user.name }}, }`,
