@@ -1,0 +1,29 @@
+.container > img{
+    height:150px;
+    aspect-ratio:1/1;
+    border-radius: 50%;
+    object-fit: cover;
+ 
+}
+body{
+    display:flex;
+}
+ .main{
+    display:flex;
+   
+ }
+.container{
+    text-align:center;
+    place-content:center;
+    height:200px;
+}
+ 
+.container>p{
+    font-size:1.3rem;
+}
+ 
+.container span{
+    font-weight:bold;
+    font-style:italic;
+}
+

@@ -4,14 +4,39 @@
     Hello <span>{{ title }}</span>
   </p>
 </div> -->
+<!-- <div class="main">
+  <app-user
+    name="rishika"
+    imageurl="https://e0.pxfuel.com/wallpapers/618/134/desktop-wallpaper-whatsapp-d-p-cute-baby.jpg"
+  />
+  <app-user
+    name="manu"
+    imageurl="https://e0.pxfuel.com/wallpapers/618/134/desktop-wallpaper-whatsapp-d-p-cute-baby.jpg"
+  />
+  <app-user
+    name="teja"
+    imageurl="https://e0.pxfuel.com/wallpapers/618/134/desktop-wallpaper-whatsapp-d-p-cute-baby.jpg"
+  />
+  <app-user />
+</div> -->
 
-<!-- <app-user name="rishika" />
-<app-user name="manu" />
-<app-user name="teja" />
-<app-user /> -->
+<!-- @for(user of users; track user.id){
+<app-user name="{{ user.name }}" imageurl="{{ user.imageurl }}" />
+}  -->
+<div class="main">
+  @for (movie of movies; track movie.id){
+  <app-movies
+    poster="{{ movie.poster }}"
+    name="{{ movie.name }}"
+    rating="{{ movie.rating }}"
+    summary="{{ movie.summary }}"
+  />
+  }
+</div>
 
 <!-- calling the component -->
-<app-movies
+
+<!-- <app-movies
   name="RRR"
   poster="https://englishtribuneimages.blob.core.windows.net/gallary-content/2021/6/Desk/2021_6$largeimg_977224513.JPG"
   rating="8.8"
@@ -25,5 +50,5 @@
   rating=" 8.4"
   summary="Members of a black ops team must track and eliminate a
 gang of masked murderers."
-/>
+/> -->
 <router-outlet />

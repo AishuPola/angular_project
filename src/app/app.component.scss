@@ -1,22 +1,10 @@
-.container > img{
-    height:150px;
-    aspect-ratio:1/1;
-    border-radius: 50%;
- 
-}
- 
-.container{
-    text-align:center;
-    place-content:center;
-    height:100vh;
-}
- 
-.container>p{
-    font-size:1.3rem;
-}
- 
-.container span{
-    font-weight:bold;
-    font-style:italic;
-}
-
+.main{
+//     display:grid;
+//     grid-template-columns: 1fr 1fr 1fr;
+// }
+display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap:2rem
+    
+    }
