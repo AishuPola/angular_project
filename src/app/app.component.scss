@@ -1,0 +1,22 @@
+.container > img{
+    height:150px;
+    aspect-ratio:1/1;
+    border-radius: 50%;
+ 
+}
+ 
+.container{
+    text-align:center;
+    place-content:center;
+    height:100vh;
+}
+ 
+.container>p{
+    font-size:1.3rem;
+}
+ 
+.container span{
+    font-weight:bold;
+    font-style:italic;
+}
+
