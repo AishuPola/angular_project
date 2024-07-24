@@ -3,11 +3,18 @@ import { RouterOutlet } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovielistComponent } from './movielist/movielist.component';
+import { CounterComponent } from './counter/counter.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, UserComponent, MoviesComponent, MovielistComponent],
+  imports: [
+    RouterOutlet,
+    UserComponent,
+    MoviesComponent,
+    MovielistComponent,
+    CounterComponent,
+  ],
   templateUrl: './app.component.html',
   // template: `@for user of users; track user.id{ {{ user.imageurl }},
   //   {{ user.name }}, }`,
