@@ -2,14 +2,14 @@
 <button (click)="likeIncrement()">👍Like {{ like }}</button><br /><br />
 <button (click)="dislikeIncrement()">👎Dislike {{ dislike }}</button>
 
-<label for="file">File progress:</label>
+<!-- <label for="file">File progress:</label> -->
 
-<!-- <progress max="100" value="{{ (like / (like + dislike)) * 100 }}">70%</progress> -->\
+<!-- <progress max="100" value="{{ (like / (like + dislike)) * 100 }}">70%</progress> -->
 <!-- or -->
 <!-- <progress max="{{ like + dislike }}" value="{{ like }}">70%</progress> -->
 <!-- or -->
 
-<progress [max]="like + dislike" [value]="like">70%</progress>
+<!-- <progress [max]="like + dislike" [value]="like">70%</progress>
 @if( like -dislike > 10;){
 <p>YOu're Awesome</p>
-}
+} -->
