@@ -7,6 +7,11 @@
       <h3>⭐{{ rating }}</h3>
     </div>
     <button (click)="summaryy()">summary</button>
+    @if(show){
+
     <p>{{ summary }}</p>
+    <br />
+    }
   </div>
+  <app-counter />
 </div>

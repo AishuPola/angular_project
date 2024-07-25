@@ -1,7 +1,15 @@
-.main{
+// .main{
 //     display:grid;
 //     grid-template-columns: 1fr 1fr 1fr;
 // }
+// .main{
+//     display:flex;
+//     gap:2rem;
+//     flex-wrap: wrap;
+// }
+.main{
+
+
 display: flex;
         flex-wrap: wrap;
         justify-content: space-around;

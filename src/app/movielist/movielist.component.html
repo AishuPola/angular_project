@@ -1,4 +1,4 @@
-<!-- <div class="add-movie-form">
+<div class="add-movie-form">
   <input type="text" [(ngModel)]="poster" placeholder="poster" />
   <input type="text" [(ngModel)]="name" placeholder="name" />
 
@@ -6,15 +6,21 @@
   <input type="text" [(ngModel)]="summary" placeholder="summary" />
   />
   <button (click)="addMovie()">addmovie</button>
-</div> -->
-
+</div>
+<!-- 
 <div class="main">
-  @for (movie of movielist; track movie.id){
-  <app-movies
+  @for (movie of movielist; track movie.id){ -->
+<!-- <app-movies
     poster="{{ movie.poster }}"
     name="{{ movie.name }}"
     rating="{{ movie.rating }}"
     summary="{{ movie.summary }}"
-  />
-  }
-</div>
+  /> -->
+<!-- } -->
+<!-- </div> -->
+
+@for (movie of movielist; track $index){ poster="{{ movie.poster }}" name="{{
+  movie.name
+}}" rating="{{ movie.rating }}" summary="{{ movie.summary }}
+
+}

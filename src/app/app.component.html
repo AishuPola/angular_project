@@ -40,9 +40,18 @@
   rating=" 8.4"
   summary="Members of a black ops team must track and eliminate a
 gang of masked murderers." -->
-
+<!-- 
 <div class="main"><app-movielist [movielist]="movies"></app-movielist></div>
 
 <app-counter />
 <app-color-game />
-<app-add-movie [movieadd]="movies" />
+<app-add-movie [movieadd]="movies" /> -->
+
+<nav>
+  <a routerLink="/"> Movies</a><br />
+
+  <a routerLink="/color-game"> color</a>
+
+  <router-outlet></router-outlet>
+  <!-- <a href="/">  Movies</a> -->
+</nav>
