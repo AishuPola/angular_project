@@ -4,7 +4,6 @@
 
   <input type="number" [(ngModel)]="rating" placeholder="rating" />
   <input type="text" [(ngModel)]="summary" placeholder="summary" />
-  />
   <button (click)="addMovie()">addmovie</button>
 </div>
 <!-- 
@@ -19,8 +18,11 @@
 <!-- } -->
 <!-- </div> -->
 
-@for (movie of movielist; track $index){ poster="{{ movie.poster }}" name="{{
-  movie.name
-}}" rating="{{ movie.rating }}" summary="{{ movie.summary }}
-
+@for (movie of movielist; track $index){
+<app-movies
+  [name]="movie.name"
+  [poster]="movie.poster"
+  [rating]="movie.rating"
+  [summary]="movie.summary"
+/>
 }
