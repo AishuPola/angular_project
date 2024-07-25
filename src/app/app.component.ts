@@ -6,6 +6,7 @@ import { MovielistComponent } from './movielist/movielist.component';
 import { CounterComponent } from './counter/counter.component';
 import { ColorGameComponent } from './color-game/color-game.component';
 import { ColorBoxComponent } from './color-box/color-box.component';
+import { AddMovieComponent } from './add-movie/add-movie.component';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ import { ColorBoxComponent } from './color-box/color-box.component';
     CounterComponent,
     ColorGameComponent,
     ColorBoxComponent,
+    AddMovieComponent,
   ],
   templateUrl: './app.component.html',
   // template: `@for user of users; track user.id{ {{ user.imageurl }},
