@@ -6,9 +6,10 @@
 
 <!-- <progress max="100" value="{{ (like / (like + dislike)) * 100 }}">70%</progress> -->\
 <!-- or -->
-<progress max="{{ like + dislike }}" value="{{ like }}">70%</progress>
+<!-- <progress max="{{ like + dislike }}" value="{{ like }}">70%</progress> -->
+<!-- or -->
 
 <progress [max]="like + dislike" [value]="like">70%</progress>
-<!-- @if( like -dislike > 10;){
+@if( like -dislike > 10;){
 <p>YOu're Awesome</p>
-} -->
+}

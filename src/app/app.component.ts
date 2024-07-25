@@ -4,6 +4,8 @@ import { UserComponent } from './user/user.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovielistComponent } from './movielist/movielist.component';
 import { CounterComponent } from './counter/counter.component';
+import { ColorGameComponent } from './color-game/color-game.component';
+import { ColorBoxComponent } from './color-box/color-box.component';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +16,8 @@ import { CounterComponent } from './counter/counter.component';
     MoviesComponent,
     MovielistComponent,
     CounterComponent,
+    ColorGameComponent,
+    ColorBoxComponent,
   ],
   templateUrl: './app.component.html',
   // template: `@for user of users; track user.id{ {{ user.imageurl }},

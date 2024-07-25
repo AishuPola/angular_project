@@ -1,0 +1,9 @@
+<!-- <p>color-game works!</p> -->
+<input type="text" [(ngModel)]="color" [style.background]="color" />
+<button (click)="addButton()">Add button</button>
+
+@for (clr of colorList; track $index){
+<div class="colors" [style.background]="clr"></div>
+} @for (clr of colorList; track $index){
+<app-color-box [clr]="clr" />
+}
