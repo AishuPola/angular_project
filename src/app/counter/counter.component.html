@@ -1,6 +1,8 @@
 <!-- <p>counter works!</p> -->
-<button (click)="likeIncrement()">👍Like {{ like }}</button><br /><br />
-<button (click)="dislikeIncrement()">👎Dislike {{ dislike }}</button>
+<button (click)="likeIncrement()" mat-stroked-button>👍 {{ like }}</button>
+<button (click)="dislikeIncrement()" mat-stroked-button>
+  👎 {{ dislike }}
+</button>
 
 <!-- <label for="file">File progress:</label> -->
 

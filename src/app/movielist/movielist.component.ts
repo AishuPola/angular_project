@@ -2,11 +2,12 @@ import { Component, Input } from '@angular/core';
 import { MoviesComponent } from '../movies/movies.component';
 import { FormsModule } from '@angular/forms';
 import { Imovie } from '../app.component';
-
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-movielist',
   standalone: true,
-  imports: [MoviesComponent, FormsModule],
+  imports: [MoviesComponent, FormsModule, MatInputModule, MatButtonModule],
   templateUrl: './movielist.component.html',
   styleUrl: './movielist.component.scss',
 })
@@ -120,5 +121,9 @@ export class MovielistComponent {
       summary: this.summary,
     };
     this.movielist.push(newMovie);
+  }
+  deleteMovieP(Index: number) {
+    // let idx=this.movielist.indexOf();
+    this.movielist.splice(Index, 1);
   }
 }

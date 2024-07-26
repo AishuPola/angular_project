@@ -1,11 +1,30 @@
 <div class="add-movie-form">
-  <input type="text" [(ngModel)]="poster" placeholder="poster" />
-  <input type="text" [(ngModel)]="name" placeholder="name" />
+  <mat-form-field>
+    <input matInput type="text" [(ngModel)]="poster" placeholder="poster" />
+  </mat-form-field>
 
-  <input type="number" [(ngModel)]="rating" placeholder="rating" />
-  <input type="text" [(ngModel)]="summary" placeholder="summary" />
-  <button (click)="addMovie()">addmovie</button>
+  <mat-form-field>
+    <!-- <mat-label>Name</mat-label> -->
+    <input matInput [(ngModel)]="name" placeholder="name" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="number" [(ngModel)]="rating" placeholder="rating" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="text" [(ngModel)]="summary" placeholder="summary" />
+  </mat-form-field>
+  <button (click)="addMovie()" mat-stroked-button>addmovie</button><br /><br />
 </div>
+
+<!-- <mat-form-field>
+  <mat-label>Name</mat-label>
+  <input matInput place-holder="Name" [(ngModel)]="name" />
+</mat-form-field> -->
+<!-- <mat-form-field>
+  <mat-label>Name</mat-label>
+  <input matInput place-holder="Name" [(ngModel)]="name" />
+</mat-form-field> -->
 <!-- 
 <div class="main">
   @for (movie of movielist; track movie.id){ -->
@@ -17,12 +36,15 @@
   /> -->
 <!-- } -->
 <!-- </div> -->
-
-@for (movie of movielist; track $index){
-<app-movies
-  [name]="movie.name"
-  [poster]="movie.poster"
-  [rating]="movie.rating"
-  [summary]="movie.summary"
-/>
-}
+<div class="main">
+  @for (movie of movielist; track $index){
+  <app-movies
+    [name]="movie.name"
+    [poster]="movie.poster"
+    [rating]="movie.rating"
+    [summary]="movie.summary"
+    [Index]="$index"
+    (deleteMovieEvent)="deleteMovieP($event)"
+  />
+  }
+</div>

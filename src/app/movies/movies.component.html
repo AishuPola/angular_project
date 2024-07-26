@@ -3,15 +3,20 @@
   <div class="main-container">
     <img src="{{ poster }}" alt="{{ name }}" />
     <div class="container">
-      <h3>{{ name }}</h3>
-      <h3>⭐{{ rating }}</h3>
+      <h5>{{ name }}</h5>
+      <h5>⭐{{ rating }}</h5>
     </div>
-    <button (click)="summaryy()">summary</button>
-    @if(show){
+    <div class="summary">
+      <button (click)="summaryy()" mat-stroked-button>summary</button>
+      @if(show){
 
-    <p>{{ summary }}</p>
-    <br />
-    }
+      <p>{{ summary }}</p>
+      <br />
+      }
+    </div>
   </div>
-  <app-counter />
+  <div class="buttons">
+    <app-counter />
+    <button (click)="delete()" mat-stroked-button>Delete</button>
+  </div>
 </div>

@@ -1,5 +1,14 @@
-.movie-list-container{
+.main{
     display:flex;
-    gap:2rem;
+    gap:3rem;
     flex-wrap: wrap;
+    justify-content: space-around;
+}
+.add-movie-form{
+    display:flex;
+    flex-direction: column;
+    gap:0.5rem;
+    max-width: 400px;
+    margin:0 auto;
+
 }

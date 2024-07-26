@@ -10,9 +10,9 @@
 .main-container{
     height:600px;
     width:300px;
-    place-content: center;
-    padding-bottom: 100px;
-   
+    // place-content: center;
+    padding-bottom: 220px;
+    // padding:10px;
 }
 
 img{
@@ -27,4 +27,20 @@ img{
 }
 .main-container p{
     margin:0;
+}
+.buttons{
+    display:flex;
+    justify-content: space-between;
+    padding-top: 10px ;
+}
+.summary{
+    padding-bottom: 40px;
+    gap:3rem;
+}
+
+.main:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+
+
 }
