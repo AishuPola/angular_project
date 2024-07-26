@@ -5,6 +5,7 @@ import { Imovie } from '../app.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { AddMovieComponent } from '../add-movie/add-movie.component';
+import { MoviesService } from '../movies.service';
 @Component({
   selector: 'app-movielist',
   standalone: true,
@@ -116,6 +117,9 @@ export class MovielistComponent {
       rating: 8.8,
     },
   ];
+  constructor(public moviesservice: MoviesService) {
+    this.movielist = this.moviesservice.movielist;
+  }
   name = '';
   poster = '';
   rating = '';
