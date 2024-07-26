@@ -1,11 +1,11 @@
-<div class="add-movie-form">
+<!-- <div class="add-movie-form">
   <mat-form-field>
     <input matInput type="text" [(ngModel)]="poster" placeholder="poster" />
   </mat-form-field>
 
   <mat-form-field>
-    <!-- <mat-label>Name</mat-label> -->
-    <input matInput [(ngModel)]="name" placeholder="name" />
+     <mat-label>Name</mat-label> -->
+<!-- <input matInput [(ngModel)]="name" placeholder="name" />
   </mat-form-field>
 
   <mat-form-field>
@@ -15,7 +15,7 @@
     <input matInput type="text" [(ngModel)]="summary" placeholder="summary" />
   </mat-form-field>
   <button (click)="addMovie()" mat-stroked-button>addmovie</button><br /><br />
-</div>
+</div> -->
 
 <!-- <mat-form-field>
   <mat-label>Name</mat-label>
@@ -36,6 +36,9 @@
   /> -->
 <!-- } -->
 <!-- </div> -->
+
+<app-add-movie [movieadd]="movielist" />
+
 <div class="main">
   @for (movie of movielist; track $index){
   <app-movies

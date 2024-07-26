@@ -4,10 +4,17 @@ import { FormsModule } from '@angular/forms';
 import { Imovie } from '../app.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { AddMovieComponent } from '../add-movie/add-movie.component';
 @Component({
   selector: 'app-movielist',
   standalone: true,
-  imports: [MoviesComponent, FormsModule, MatInputModule, MatButtonModule],
+  imports: [
+    MoviesComponent,
+    FormsModule,
+    MatInputModule,
+    MatButtonModule,
+    AddMovieComponent,
+  ],
   templateUrl: './movielist.component.html',
   styleUrl: './movielist.component.scss',
 })

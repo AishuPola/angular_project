@@ -7,6 +7,7 @@ import { CounterComponent } from './counter/counter.component';
 import { ColorGameComponent } from './color-game/color-game.component';
 import { ColorBoxComponent } from './color-box/color-box.component';
 import { AddMovieComponent } from './add-movie/add-movie.component';
+import { MoviesService } from './movies.service';
 
 export interface Imovie {
   name: string;
@@ -31,9 +32,9 @@ export interface Imovie {
   templateUrl: './app.component.html',
   // template: `@for user of users; track user.id{ {{ user.imageurl }},
   //   {{ user.name }}, }`,
-  template: `@for movie of movies; track movie.id {{ poster }},{{ name }},{{
-      rating
-    }},{{ summary }}`,
+  // template: `@for movie of movies; track movie.id {{ poster }},{{ name }},{{
+  //     rating
+  //   }},{{ summary }}`,
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
@@ -60,4 +61,7 @@ export class AppComponent {
         'https://e0.pxfuel.com/wallpapers/618/134/desktop-wallpaper-whatsapp-d-p-cute-baby.jpg',
     },
   ];
+  constructor(public moviesService: MoviesService) {
+    console.log(this.moviesService);
+  }
 }
