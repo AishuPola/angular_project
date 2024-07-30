@@ -4,11 +4,17 @@ import { Imovie } from '../app.component';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-movies',
   standalone: true,
-  imports: [CounterComponent, MatSlideToggleModule, MatButtonModule],
+  imports: [
+    CounterComponent,
+    MatSlideToggleModule,
+    MatButtonModule,
+    RouterLink,
+  ],
   templateUrl: './movies.component.html',
   styleUrl: './movies.component.scss',
 })
@@ -20,6 +26,7 @@ export class MoviesComponent {
   @Input() summary = '';
   @Input() Index = 0;
 
+  @Input() id = 0;
   @Output() deleteMovieEvent = new EventEmitter<number>();
   show = true;
   summaryy() {

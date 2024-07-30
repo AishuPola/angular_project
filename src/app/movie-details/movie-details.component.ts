@@ -1,10 +1,21 @@
-import { Injectable } from '@angular/core';
-import { Imovie } from './app.component';
-@Injectable({
-  providedIn: 'root',
+import { Component } from '@angular/core';
+import { MoviesService } from '../movies.service';
+import { ActivatedRoute } from '@angular/router';
+
+@Component({
+  selector: 'app-movie-details',
+  standalone: true,
+  imports: [],
+  templateUrl: './movie-details.component.html',
+  styleUrl: './movie-details.component.scss',
 })
-export class MoviesService {
-  movielist: Array<Imovie> = [
+export class MovieDetailsComponent {
+  // constructor(private moviesService: MoviesService) {
+  //   this.moviesService = this.moviesService.getMovieByIdex(idx);
+  // }
+  // movie!: IMovie;
+  // trustedUrl!: SafeUrl;
+  movielist: any = [
     {
       // id: 1,
       name: 'Vikram',
@@ -100,12 +111,11 @@ export class MoviesService {
       rating: 8.8,
     },
   ];
-  constructor() {}
-  // getmovies(){
-
-  // }
-  getMovieByIndex(idx: number) {
-    return this.movielist[idx];
+  constructor(
+    private moviesService: MoviesService,
+    private route: ActivatedRoute
+  ) {
+    let idx = this.route.snapshot.paramMap.get('id') || 0;
+    this.movielist = this.moviesService.getMovieByIndex(+idx);
   }
 }
-// let x1 = new MoviesService();
