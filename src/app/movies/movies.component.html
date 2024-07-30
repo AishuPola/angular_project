@@ -1,5 +1,5 @@
 <!-- <p>movies works!</p> -->
-<div class="main">
+<!-- <div class="main">
   <div class="main-container">
     <img src="{{ poster }}" alt="{{ name }}" />
     <div class="container">
@@ -20,4 +20,49 @@
     <app-counter />
     <button (click)="delete()" mat-stroked-button>Delete</button>
   </div>
-</div>
+</div> -->
+
+<mat-card class="movie-container">
+  <img src="{{ poster }}" alt="{{ name }}" class="movie-poster" />
+  <mat-card-content>
+    <div class="movie-spec">
+      <h2 class="movie-title">
+        {{ name }}
+        <button
+          mat-icon-button
+          aria-label="Toggle summary"
+          (click)="summaryy()"
+        >
+          <mat-icon>{{
+            show ? "keyboard_arrow_up" : "keyboard_arrow_down"
+          }}</mat-icon>
+        </button>
+
+        <button
+          mat-icon-button
+          aria-label="Details of movie"
+          routerLink="/movies/{{ id }}"
+        >
+          <mat-icon>info</mat-icon>
+        </button>
+      </h2>
+      <p class="movie-rating">⭐ {{ rating }}</p>
+    </div>
+
+    @if(show){
+    <p class="movie-summary">{{ summary }}</p>
+    }
+
+    <div class="action-buttons-container">
+      <app-counter />
+      <button
+        mat-icon-button
+        aria-label="Delete movie"
+        color="warn"
+        (click)="delete()"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

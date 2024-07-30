@@ -40,7 +40,9 @@
 <app-add-movie [movieadd]="movielist" />
 
 <div class="main">
-  @for (movie of movielist; track $index){
+  @if(isLoading){
+  <h3>loading</h3>
+  } @for (movie of movielist; track $index){
   <app-movies
     [id]="$index"
     [name]="movie.name"

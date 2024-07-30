@@ -5,6 +5,9 @@ import { Imovie } from '../app.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-movies',
@@ -14,6 +17,10 @@ import { RouterLink } from '@angular/router';
     MatSlideToggleModule,
     MatButtonModule,
     RouterLink,
+
+    MatBadgeModule,
+    MatIconModule,
+    MatCardModule,
   ],
   templateUrl: './movies.component.html',
   styleUrl: './movies.component.scss',

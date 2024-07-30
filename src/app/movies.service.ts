@@ -122,5 +122,10 @@ export class MoviesService {
   getMovieByIndex(idx: number) {
     return this.movielist[idx];
   }
+  getAllMoviesP(): Promise<Imovie[]> {
+    return fetch('https://6402db84f61d96ac487212a6.mockapi.io/movies/').then(
+      (res) => res.json()
+    );
+  }
 }
 // let x1 = new MoviesService();
