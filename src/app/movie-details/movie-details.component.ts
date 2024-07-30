@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { MoviesService } from '../movies.service';
 import { ActivatedRoute } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
+import { SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-movie-details',
@@ -111,11 +113,17 @@ export class MovieDetailsComponent {
       rating: 8.8,
     },
   ];
+  trustedUrl!: SafeUrl;
+
   constructor(
     private moviesService: MoviesService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private sanitizer: DomSanitizer
   ) {
     let idx = this.route.snapshot.paramMap.get('id') || 0;
     this.movielist = this.moviesService.getMovieByIndex(+idx);
+    this.trustedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+      this.movielist.trailer
+    );
   }
 }

@@ -1,7 +1,16 @@
 <!-- <p>movie-details works!</p> -->
+
 <div class="main">
   <div class="main-container">
-    <img src="{{ movielist.poster }}" alt="{{ movielist.name }}" />
+    <iframe
+      width="914"
+      height="514"
+      [src]="trustedUrl"
+      title="bahubali"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
+    <!-- <img src="{{ movielist.trailer }}" alt="{{ movielist.name }}" /> -->
     <div class="container">
       <h5>{{ movielist.name }}</h5>
       <h5>⭐{{ movielist.rating }}</h5>

@@ -14,6 +14,8 @@ export interface Imovie {
   poster: string;
   rating: number;
   summary: string;
+  id: string;
+  trailer: string;
 }
 @Component({
   selector: 'app-root',
