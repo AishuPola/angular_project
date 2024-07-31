@@ -44,7 +44,7 @@
   <h3>loading</h3>
   } @for (movie of movielist; track $index){
   <app-movies
-    [id]="$index"
+    [id]="movie.id"
     [name]="movie.name"
     [poster]="movie.poster"
     [rating]="movie.rating"

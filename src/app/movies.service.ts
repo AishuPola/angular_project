@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Imovie } from './app.component';
+import { DELETE } from '@angular/cdk/keycodes';
 @Injectable({
   providedIn: 'root',
 })
@@ -126,6 +127,16 @@ export class MoviesService {
     return fetch('https://6402db84f61d96ac487212a6.mockapi.io/movies/').then(
       (res) => res.json()
     );
+  }
+  getMovieByIdP(id: string): Promise<Imovie> {
+    return fetch(
+      `https://6402db84f61d96ac487212a6.mockapi.io/movies/${id}`
+    ).then((res) => res.json());
+  }
+  delete(id: string) {
+    return fetch(`https://6402db84f61d96ac487212a6.mockapi.io/movies/${id}`, {
+      method: 'DELETE',
+    }).then((res) => res.json());
   }
 }
 // let x1 = new MoviesService();

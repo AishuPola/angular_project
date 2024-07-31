@@ -26,13 +26,14 @@ export class MovielistComponent {
   // constructor(public moviesservice: MoviesService) {
   //   this.movielist = this.moviesservice.movielist;
   // }
-
+  constructor(public moviesservice: MoviesService) {}
   name = '';
   poster = '';
   rating = '';
   summary = '';
   id = '';
   trailer = '';
+  msg = '';
   addMovie() {
     let newMovie: Imovie = {
       name: this.name,
@@ -44,16 +45,32 @@ export class MovielistComponent {
     };
     this.movielist.push(newMovie);
   }
-  deleteMovieP(Index: number) {
-    // let idx=this.movielist.indexOf();
-    this.movielist.splice(Index, 1);
-  }
-  constructor(public moviesservice: MoviesService) {}
-  // this.movielist = this.moviesservice.movielist;
   ngOnInit() {
-    this.moviesservice.getAllMoviesP().then((data) => {
-      this.movielist = data;
-      this.isLoading = false;
+    this.loadmovies();
+  }
+  loadmovies() {
+    this.moviesservice
+      .getAllMoviesP()
+      .then((data) => {
+        this.movielist = data;
+        this.isLoading = false;
+      })
+      .catch(() => {
+        this.isLoading = false;
+        this.msg = 'something went wrong';
+      });
+  }
+  deleteMovieP(id: string) {
+    // let idx=this.movielist.indexOf();
+    // this.movielist.splice(Index, 1);
+
+    this.moviesservice.delete(id).then(() => {
+      // this.moviesservice.getAllMoviesP().then((data) => {
+      //   this.movielist = data;
+      //   this.isLoading = false;
+      this.loadmovies();
     });
   }
 }
+
+// this.movielist = this.moviesservice.movielist;

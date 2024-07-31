@@ -113,17 +113,30 @@ export class MovieDetailsComponent {
       rating: 8.8,
     },
   ];
+  // movie!: Imovie;
   trustedUrl!: SafeUrl;
+  isLoading: boolean = true;
+  msg = '';
 
   constructor(
     private moviesService: MoviesService,
     private route: ActivatedRoute,
     private sanitizer: DomSanitizer
   ) {
-    let idx = this.route.snapshot.paramMap.get('id') || 0;
-    this.movielist = this.moviesService.getMovieByIndex(+idx);
+    // let idx = this.route.snapshot.paramMap.get('id') || 0;
+    // this.movielist = this.moviesService.getMovieByIndex(+idx);
     this.trustedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
       this.movielist.trailer
     );
+  }
+  ngOnInit() {
+    let id = this.route.snapshot.paramMap.get('id') as string;
+    this.moviesService.getMovieByIdP(id).then((data) => {
+      this.movielist = data;
+      this.isLoading = false;
+      this.trustedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+        this.movielist.trailer
+      );
+    });
   }
 }

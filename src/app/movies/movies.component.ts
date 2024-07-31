@@ -26,15 +26,17 @@ import { MatCardModule } from '@angular/material/card';
   styleUrl: './movies.component.scss',
 })
 export class MoviesComponent {
+  // @Input() movie={
   @Input() name = 'Vikram';
   @Input() poster =
     'https://m.media-amazon.com/images/M/MV5BMmJhYTYxMGEtNjQ5NS00MWZiLWEwN2ItYjJmMWE2YTU1YWYxXkEyXkFqcGdeQXVyMTEzNzg0Mjkx._V1_.jpg';
   @Input() rating = 0;
   @Input() summary = '';
   @Input() Index = 0;
+  @Input() trailer = '';
 
-  @Input() id = 0;
-  @Output() deleteMovieEvent = new EventEmitter<number>();
+  @Input() id!: string;
+  @Output() deleteMovieEvent = new EventEmitter<string>();
   show = true;
   summaryy() {
     // this.summary.push(this.summary)
@@ -47,8 +49,8 @@ export class MoviesComponent {
     //this.show=!this.show.
   }
   delete() {
-    console.log(this.Index);
+    console.log(this.id);
     // this.deleteMovieEvent.emit();
-    this.deleteMovieEvent.emit(this.Index);
+    this.deleteMovieEvent.emit(this.id);
   }
 }
