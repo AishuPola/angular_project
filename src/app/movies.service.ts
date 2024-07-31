@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Imovie } from './app.component';
 import { DELETE } from '@angular/cdk/keycodes';
+import { NewMovie } from './movie';
 @Injectable({
   providedIn: 'root',
 })
@@ -120,22 +121,42 @@ export class MoviesService {
   // getmovies(){
 
   // }
+  getMovielist() {
+    return this.movielist;
+  }
   getMovieByIndex(idx: number) {
     return this.movielist[idx];
   }
   getAllMoviesP(): Promise<Imovie[]> {
-    return fetch('https://6402db84f61d96ac487212a6.mockapi.io/movies/').then(
+    return fetch('https://669a42869ba098ed61fef725.mockapi.io/movies').then(
       (res) => res.json()
     );
   }
   getMovieByIdP(id: string): Promise<Imovie> {
     return fetch(
-      `https://6402db84f61d96ac487212a6.mockapi.io/movies/${id}`
+      `https://669a42869ba098ed61fef725.mockapi.io/movies/${id}`
     ).then((res) => res.json());
   }
+
   delete(id: string) {
-    return fetch(`https://6402db84f61d96ac487212a6.mockapi.io/movies/${id}`, {
+    return fetch(`https://669a42869ba098ed61fef725.mockapi.io/movies/${id}`, {
       method: 'DELETE',
+    }).then((res) => res.json());
+  }
+  addMovie(newMovie: NewMovie) {
+    // this.movieList.push(newMovie);
+
+    // Post
+    // 1. method
+    // 2. body - Data & JSON
+    // 3. Header - JSON
+
+    return fetch(`https://6402db84f61d96ac487212a6.mockapi.io/movies`, {
+      method: 'POST',
+      body: JSON.stringify(newMovie),
+      headers: {
+        'Content-type': 'application/json',
+      },
     }).then((res) => res.json());
   }
 }
