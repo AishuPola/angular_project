@@ -45,6 +45,14 @@
         >
           <mat-icon>info</mat-icon>
         </button>
+
+        <button
+          mat-icon-button
+          aria-label="edit of movie"
+          routerLink="/movies/edit/{{ id }}"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
       </h2>
       <p class="movie-rating">⭐ {{ rating }}</p>
     </div>

@@ -5,30 +5,34 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { MovielistComponent } from './movielist/movielist.component';
 import { AddMovieComponent } from './add-movie/add-movie.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { Component } from '@angular/core';
+import { authGuard } from './auth.guard';
+import { EditMoviesComponent } from './edit-movies/edit-movies.component';
 export const routes: Routes = [
   {
     path: 'movies',
-    component: MovielistComponent,
+
+    children: [
+      { path: '', component: MovielistComponent },
+      {
+        path: 'add',
+        component: AddMovieComponent,
+      },
+      { path: ':id', component: MovieDetailsComponent },
+    ],
   },
   {
     path: 'color-game',
     component: ColorGameComponent,
+    canActivate: [authGuard],
   },
   {
-    path: 'movies/add',
-    component: AddMovieComponent,
+    path: 'movies/edit/:id',
+    component: EditMoviesComponent,
   },
-  {
-    path: 'movies/:id',
-    component: MovieDetailsComponent,
-  },
+
   {
     path: '**',
     component: PageNotFoundComponent,
   },
-
-  //     {
-  // path:"movie",
-  // component:
-  //     },
 ];

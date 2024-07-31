@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Imovie } from './app.component';
 import { DELETE } from '@angular/cdk/keycodes';
 import { NewMovie } from './movie';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
@@ -154,6 +155,26 @@ export class MoviesService {
     return fetch(`https://669a42869ba098ed61fef725.mockapi.io/movies`, {
       method: 'POST',
       body: JSON.stringify(newMovie),
+      headers: {
+        'Content-type': 'application/json',
+      },
+    }).then((res) => res.json());
+  }
+  editMovieP(
+    id: string,
+    name: string,
+    poster: string,
+    summary: string,
+    rating: number
+  ): Promise<any> {
+    return fetch(`https://669a42869ba098ed61fef725.mockapi.io/movies/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify({
+        name: name,
+        poster: poster,
+        summary: summary,
+        rating: rating,
+      }),
       headers: {
         'Content-type': 'application/json',
       },

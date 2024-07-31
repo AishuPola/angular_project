@@ -1,0 +1,19 @@
+<!-- <div style="height: 100%; width: 100vw"> -->
+<div class="main">
+  <div class="edit">
+    <!-- <h1>Edit Your movie</h1> -->
+    <div>
+      <input placeholder="Name" [(ngModel)]="name" />
+    </div>
+    <div>
+      <input placeholder="Poster" [(ngModel)]="poster" />
+    </div>
+    <div>
+      <input placeholder="Summary" [(ngModel)]="summary" />
+    </div>
+    <div>
+      <input placeholder="Rating" [(ngModel)]="rating" />
+    </div>
+    <div><button (click)="editMovie()">Save</button></div>
+  </div>
+</div>
