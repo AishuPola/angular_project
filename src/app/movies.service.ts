@@ -151,7 +151,7 @@ export class MoviesService {
     // 2. body - Data & JSON
     // 3. Header - JSON
 
-    return fetch(`https://6402db84f61d96ac487212a6.mockapi.io/movies`, {
+    return fetch(`https://669a42869ba098ed61fef725.mockapi.io/movies`, {
       method: 'POST',
       body: JSON.stringify(newMovie),
       headers: {

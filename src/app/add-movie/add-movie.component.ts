@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MoviesService } from '../movies.service';
 import { Router } from '@angular/router';
 import { Imovie } from '../app.component';
+import { NewMovie } from '../movie';
 
 @Component({
   selector: 'app-add-movie',
@@ -31,7 +32,7 @@ export class AddMovieComponent {
     //   rating: this.rating,
     //   summary: this.summary,
     // });
-    let newMovie: Omit<Imovie, 'id'> = {
+    let newMovie: NewMovie = {
       poster: this.poster,
       name: this.name,
       rating: this.rating,
