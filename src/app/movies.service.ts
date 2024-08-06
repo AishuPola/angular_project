@@ -4,7 +4,8 @@ import { DELETE } from '@angular/cdk/keycodes';
 import { NewMovie } from './movie';
 import { Observable } from 'rxjs';
 // const API = 'https://669a42869ba098ed61fef725.mockapi.io/movies';
-const API = 'http://localhost:4000';
+// const API = 'http://localhost:4000';
+const API = 'https://node-js-xg95.onrender.com';
 @Injectable({
   providedIn: 'root',
 })
