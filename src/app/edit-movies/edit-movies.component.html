@@ -2,18 +2,25 @@
 <div class="main">
   <div class="edit">
     <!-- <h1>Edit Your movie</h1> -->
-    <div>
-      <input placeholder="Name" [(ngModel)]="name" />
-    </div>
-    <div>
-      <input placeholder="Poster" [(ngModel)]="poster" />
-    </div>
-    <div>
-      <input placeholder="Summary" [(ngModel)]="summary" />
-    </div>
-    <div>
-      <input placeholder="Rating" [(ngModel)]="rating" />
-    </div>
-    <div><button (click)="editMovie()">Save</button></div>
+    <mat-form-field>
+      <mat-label>name</mat-label>
+      <input matInput placeholder=" name " [(ngModel)]="name" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Poster</mat-label>
+      <input matInput placeholder=" poster" [(ngModel)]="poster" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>summary</mat-label>
+      <input matInput placeholder=" summary" [(ngModel)]="summary" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>rating</mat-label>
+      <input matInput placeholder=" rating" [(ngModel)]="rating" />
+    </mat-form-field>
+    <button (click)="editMovie()">Save</button>
   </div>
 </div>
