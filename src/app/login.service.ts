@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-// import { API } from './global';
+import { API } from './global';
 export interface User {
   username: string;
   password: string;
@@ -14,7 +14,7 @@ export interface TokenResponse {
 export class LoginService {
   constructor() {}
   login(credentials: User): Promise<TokenResponse> {
-    return fetch(`http://localhost:4000/users/login`, {
+    return fetch(`${API}/users/login`, {
       method: 'POST',
       body: JSON.stringify(credentials),
       headers: {

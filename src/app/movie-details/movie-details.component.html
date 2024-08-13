@@ -1,5 +1,7 @@
 <!-- <p>movie-details works!</p> -->
-
+@if(isLoading){
+<h1>Loading...</h1>
+} @if(movie){
 <div class="main">
   <div class="main-container">
     <iframe
@@ -20,5 +22,6 @@
     <br />
   </div>
 </div>
-
+}
+<h1>{{ msg }}</h1>
 <!-- <app-counter /> -->

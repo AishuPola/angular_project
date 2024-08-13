@@ -3,7 +3,7 @@ import { MoviesService } from '../movies.service';
 import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { SafeUrl } from '@angular/platform-browser';
-
+import { Imovie } from '../app.component';
 @Component({
   selector: 'app-movie-details',
   standalone: true,
@@ -113,7 +113,7 @@ export class MovieDetailsComponent {
       rating: 8.8,
     },
   ];
-  // movie!: Imovie;
+  movie!: Imovie;
   trustedUrl!: SafeUrl;
   isLoading: boolean = true;
   msg = '';
@@ -131,12 +131,18 @@ export class MovieDetailsComponent {
   }
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get('id') as string;
-    this.moviesService.getMovieByIdP(id).then((data) => {
-      this.movielist = data;
-      this.isLoading = false;
-      this.trustedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
-        this.movielist.trailer
-      );
-    });
+    this.moviesService
+      .getMovieByIdP(id)
+      .then((data) => {
+        this.movielist = data;
+        this.isLoading = false;
+        this.trustedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+          this.movielist.trailer
+        );
+      })
+      .catch((err) => {
+        this.isLoading = false;
+        this.msg = err || 'Something went wrong 🥲';
+      });
   }
 }

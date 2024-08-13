@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Imovie } from './app.component';
-import { DELETE } from '@angular/cdk/keycodes';
+
 import { NewMovie } from './movie';
-import { Observable } from 'rxjs';
+
+import { API } from './global';
+import { Router } from '@angular/router';
 // const API = 'https://669a42869ba098ed61fef725.mockapi.io/movies';
 // const API = 'http://localhost:4000';
-const API = 'https://node-js-xg95.onrender.com';
+// const API = 'https://node-js-xg95.onrender.com';
 @Injectable({
   providedIn: 'root',
 })
@@ -120,6 +122,7 @@ export class MoviesService {
       id: '109',
     },
   ];
+  router: any;
 
   constructor() {}
   // getmovies(){
@@ -134,8 +137,19 @@ export class MoviesService {
   getAllMoviesP(): Promise<Imovie[]> {
     return fetch(`${API}/movies`).then((res) => res.json());
   }
-  getMovieByIdP(id: string): Promise<Imovie> {
-    return fetch(`${API}/movies/${id}`).then((res) => res.json());
+  getMovieByIdP(id: string): Promise<any> {
+    return fetch(`${API}/movies/${id}`, {
+      method: 'GET',
+      headers: {
+        'x-auth-token': localStorage.getItem('token') as string,
+      },
+    }).then((res) => {
+      if (res.status != 200) {
+        this.router.navigate(['/login']);
+        throw new Error('Not Authorised');
+      }
+      return res.json();
+    });
   }
 
   delete(id: string) {

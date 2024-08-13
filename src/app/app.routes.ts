@@ -8,6 +8,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { Component } from '@angular/core';
 import { authGuard } from './auth.guard';
 import { EditMoviesComponent } from './edit-movies/edit-movies.component';
+import { LoginComponent } from './login/login.component';
 export const routes: Routes = [
   {
     path: 'movies',
@@ -17,9 +18,14 @@ export const routes: Routes = [
       {
         path: 'add',
         component: AddMovieComponent,
+        canActivate: [authGuard],
       },
       { path: ':id', component: MovieDetailsComponent },
     ],
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: 'color-game',
